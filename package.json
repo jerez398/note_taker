@@ -1,0 +1,13 @@
+{
+  "name": "note_taker",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix note_taker_client run build",
+    "start:dev": "concurrently -n client,server -c blue,green \"npm --prefix note_taker_client run dev\" \"npm --prefix note_taker_server run dev\"",
+    "start": "NODE_ENVIRONMENT=production npm --prefix note_taker_server run start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

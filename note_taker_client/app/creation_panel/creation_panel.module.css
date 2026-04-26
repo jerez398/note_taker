@@ -1,0 +1,196 @@
+.panel {
+    display: grid;
+    grid-template-columns: minmax(var(--sidebar-min), 3fr) 7fr;
+    grid-template-rows: 1fr;
+    height: 100dvh;
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    font-family: "Google Sans Code", monospace;
+}
+
+.sidePanel {
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-strong);
+    display: grid;
+    grid-template-rows: var(--titlebar-h) 1fr;
+    grid-template-columns: 1fr;
+    min-width: 0;
+    min-height: 0;
+}
+
+.editor {
+    background-color: var(--bg-editor);
+    display: grid;
+    grid-template-rows: var(--titlebar-h) 1fr;
+    grid-template-columns: 1fr;
+    min-width: 0;
+    min-height: 0;
+}
+
+.titleBar {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    align-items: center;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.titleCase {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+.editorTitleInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+.editorTitleInput::placeholder {
+    color: var(--text-placeholder);
+}
+
+.actionButtons {
+    flex-grow: 0;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.actionButtons button {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actionButtons button:hover {
+    color: var(--accent);
+}
+
+.editorStack {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-editor);
+}
+
+.highlightLayer,
+.inputLayer {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0.75rem;
+    border: 0;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    letter-spacing: normal;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+.highlightLayer {
+    pointer-events: none;
+    color: var(--text-primary);
+    background-color: transparent;
+}
+
+.inputLayer {
+    color: transparent;
+    caret-color: var(--text-primary);
+    background-color: transparent;
+    outline: none;
+    resize: none;
+}
+
+.inputLayer::placeholder {
+    color: var(--text-placeholder);
+}
+
+.marker {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+.historyGroup {
+    list-style: none;
+}
+
+.historyGroupList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.historyDate {
+    padding: 0.5rem 0.75rem 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-placeholder);
+    letter-spacing: 0.03em;
+}
+
+.historyItem {
+    flex-grow: 0;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.historyItemTitle {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.historyItem:hover {
+    background-color: var(--bg-hover);
+}
+
+.historyItem[data-selected="true"] {
+    background-color: var(--accent);
+    color: #1d1d1f;
+}
+
+.deleteButton {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    padding: 0.125rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteButton:hover {
+    color: #ff3b30;
+}

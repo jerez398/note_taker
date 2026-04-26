@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  /* Layout */
+  --titlebar-h: 2.5rem;
+  --sidebar-min: 14rem;
+
+  /* Apple Notes — Light theme (Apple HIG system colors) */
+  --bg-app: #ffffff;
+  --bg-sidebar: #f5f5f7;
+  --bg-editor: #ffffff;
+  --bg-hover: #ebebf0;
+  --text-primary: #1d1d1f;
+  --text-placeholder: #8e8e93;
+  --border-subtle: #e5e5ea;
+  --border-strong: #d2d2d7;
+  --accent: #ffcc00;
+  --accent-hover: #ffd60a;
+  --accent-border: #e5b800;
+}
+
+[data-theme="dark"] {
+  /* Apple Notes — Dark theme (Apple HIG system colors) */
+  --bg-app: #1c1c1e;
+  --bg-sidebar: #2c2c2e;
+  --bg-editor: #1c1c1e;
+  --bg-hover: #3a3a3c;
+  --text-primary: #f5f5f7;
+  --text-placeholder: #8e8e93;
+  --border-subtle: #38383a;
+  --border-strong: #48484a;
+  --accent: #ffd60a;
+  --accent-hover: #ffcc00;
+  --accent-border: #b38f00;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  margin: 0;
+  font-family: "Google Sans Code", monospace;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
